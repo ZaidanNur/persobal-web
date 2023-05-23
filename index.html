@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>It's Me</title>
+
+    <!-- Tailwind -->
+    <link rel="stylesheet" href="./css/tailwind.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Font -->
+    <script src="https://kit.fontawesome.com/d79b975262.js" crossorigin="anonymous" defer></script>
+    <!-- Alpine -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+    <div class="navbar bg-base-100 lg:px-20 sm:px-10 fixed top-0 z-50" x-init x-data="{atElement: 'hello'}" @scroll.window="
+            if(document.querySelector('#hello').getBoundingClientRect().top > 0){
+                atElement = 'hello'
+            } else if(document.querySelector('#specialities').getBoundingClientRect().top > 0){
+                atElement = 'specialities'
+            } else if(document.querySelector('#projects').getBoundingClientRect().top > 0){
+                atElement = 'projects'
+            };
+            console.log(document.querySelector('#hello').getBoundingClientRect().top);
+            console.log(atElement);
+        ">
+        <div class="flex-1">
+            <div class="nav-logo">
+                ZaidanDev
+            </div>
+        </div>
+        <div class="flex-none">
+            <ul class="menu menu-horizontal px-1 hidden lg:flex">
+                <li><a :class="{ 'active' : atElement==='hello' }" x-on:click="window.scrollTo({top: 0, behavior: 'smooth'});window.pageXOffset">Hello!</a></li>
+                <li><a :class="{ 'active' : atElement==='specialities' }" x-on:click="document.getElementById('specialities').scrollIntoView({ behavior: 'smooth' })">Specialities</a></li>
+                <li><a :class="{ 'active' : atElement==='projects' }" x-on:click="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })">Projects</a></li>
+                <li><a>Certification</a></li>
+                <li><a>Contact</a></li>
+            </ul>
+            <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost lg:hidden">
+                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </label>
+                <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="#hello">Hello!</a></li>
+                    <li><a href="#specialities">Specialities</a></li>
+                    <li><a>Projects</a></li>
+                    <li><a>Certification</a></li>
+                    <li><a>Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hello Section -->
+    <div class="flex lg:px-32 lg:mt-16 sm:pt-10 sm:px-10" id="hello">
+        <div class="profile-photo">
+            <img class="" src="bebas1x11.png" alt="">
+        </div>
+        <div class="lg:ml-24 lg:justify-start lg:pt-20 lg:text-lg sm:pt-10 sm:text-sm sm:ml-12">
+            <p class="font-semibold lg:text-6xl sm:text-4xl">Hi! I'm Zaidan</p>
+            <p class="lg:pt-6 sm:pt-4">I am a Junior Software Engineer and very passionate about <br>technological developments. Thank you for visiting my personal website page</p>
+            <p> </p>
+            <!-- <p>Got a project? Feel free to contact me</p> -->
+            <!-- <p>Currently I work at <a style="color: #FF6700;" target="_blank" href="https://suitmedia.com/">Suitmedia Digital Agency</a> <br>as a Junior Backend Developer</p> -->
+            <a class="btn btn-primary lg:my-6 rounded-none sm:my-3" href="mailto:zaidandev@gmail.com?subject=Project Offering" target="_blank">Contact Me</a>
+            <div class="flex lg:text-base lg:pt-6 font-semibold sm:pt-3 items-center">
+                <div>
+                    Follow me on :
+                </div>
+                <div class="lg:ml-4 sm:ml-3">
+                    <a href="https://www.instagram.com/zaidan_nur11/" target="_blank"><img class="lg:w-9 sm:w-7" src="instagram.png" alt=""></a>
+                </div>
+                <div class="lg:ml-4 sm:ml-3">
+                    <a href="https://www.linkedin.com/in/zaidannurmd/" target="_blank"><img class="lg:w-9 sm:w-7" src="linkedin.png" alt=""></a>
+                </div>
+                <div class="lg:ml-4 sm:ml-3">
+                    <a href="https://github.com/ZaidanNur" target="_blank"><img class="lg:w-9 sm:w-7" src="github.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Specialities Section -->
+    <div class="lg:px-32 lg:py-16 w-full sm:pt-16" id="specialities">
+        <div class="text-center">
+            <span class="font-semibold text-5xl ">Specialities</span>
+        </div>
+        <div class="flex flex-col w-full lg:flex-row lg:mt-10  sm:mt-10 sm:px-10">
+            <div class="sm:flex-grow lg:w-1/3 card rounded-box p-3 specialities-card">
+                <div class="card-body">
+                    <img class="w-14 rounded-full" src="idlxAUbIOo.jpeg" alt="Shoes" />
+                    <h2 class="lg:mt-2 font-semibold text-2xl">Laravel Framework</h2>
+                    <p>3 years experiences in using the laravel framework and have attended several online courses regarding the laravel framework</p>
+                </div>
+            </div>
+            <div class="divider lg:divider-horizontal"></div>
+            <div class="sm:flex-grow lg:w-1/3 card  specialities-card rounded-box p-3">
+                <div class="card-body">
+                    <img class="w-14 rounded-full" src="api.png" alt="Shoes" />
+                    <h2 class="lg:mt-2 font-semibold text-2xl">Backend Development</h2>
+                    <p>1 year experience in developing API and backend for websites. Starting from database design to provide data for users</p>
+                </div>
+            </div>
+            <div class="divider lg:divider-horizontal"></div>
+            <div class="sm:flex-grow lg:w-1/3 card specialities-card rounded-box p-3">
+                <div class="card-body">
+                    <div class="rounded-full w-14 p-3" style="background-color: #fcbe40;">
+                        <img class="w-14" src="coding.png" alt="Shoes" />
+                    </div>
+                    <h2 class="lg:mt-2 font-semibold text-2xl">Fast Learner</h2>
+                    <p>I am passionate to learn new things especially in technology</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="lg:px-44 lg:py-16 w-full sm:pt-16" id="projects">
+        <div class="flex content-end text-white">
+            <div class="font-semibold lg:mr-20 text-4xl">
+                Take a look at my recent project
+            </div>
+            <div class="text-end lg:mt-3 lg:pl-12 w-2/3">
+                <p>"Discover my collection of creative projects that showcase my dedication and innovation. Delivering value-added solutions for clients and users. Enjoy exploring my portfolio!"</p>
+            </div>
+        </div>
+
+        <div class="flex lg:pt-12 gap-6">
+            <div class="gap-6">
+                <div class="flex card-project lg:p-10 items-center lg:h-1/2">
+                    <div class="w-fit">
+                        <h3 class="font-semibold text-2xl">KayuKayuku</h3>
+                        <p class="lg:mb-5 lg:mt-3 text-sm">An e-commerce website for wood craft business. This website have ordering and product management features.</p>
+                        <a class="underline" href="https://kayukayuku.zaidandev.tech/" target="_blank">Visit</a>
+                    </div>
+                    <div class="flex ">
+                        <img class="lg:w-96 lg:p-2 bg-slate-400" src="kayukayuku.png" alt="">
+                    </div>
+                </div>
+                <div class="flex card-project lg:p-10 lg:mt-6 items-center lg:h-1/2">
+                    <div class="w-fit">
+                        <h3 class="font-semibold text-2xl">BoCoo</h3>
+                        <p class="lg:mb-5 lg:mt-3 text-sm">Explore endless knowledge at your fingertips with our comprehensive e-library website.</p>
+                        <a class="underline" href="https://bocoo.zaidandev.tech/" target="_blank">Visit</a>
+                    </div>
+                    <div class="flex ">
+                        <img class="lg:w-96 lg:p-2 bg-slate-400" src="Bocoo.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="gap-6">
+                <div class="flex card-project lg:p-10 items-center lg:h-1/2">
+                    <div class="w-fit">
+                        <h3 class="font-semibold text-2xl">MyPOS</h3>
+                        <p class="lg:mb-5 lg:mt-3 text-sm">Boost your business efficiency with our intuitive and powerful POS website solution..</p>
+                        <a class="" href="#" target="_blank" disabled>Under Development</a>
+                    </div>
+                    <div class="flex ">
+                        <img class="lg:w-96 lg:p-2 bg-slate-400" src="MyPos.png" alt="">
+                    </div>
+                </div>
+                <div class="flex card-project lg:p-10 lg:mt-6 items-center lg:h-1/2">
+                    <div class="w-fit">
+                        <h3 class="font-semibold text-2xl">Gramedia Frontend Copy</h3>
+                        <p class="lg:mb-5 lg:mt-3 text-sm">Experience seamless browsing with our captivating frontend copy for Gramedia's website project.</p>
+                        <a class="underline" href="https://clonegm.zaidandev.tech/" target="_blank">Visit</a>
+                    </div>
+                    <div class="flex ">
+                        <img class="lg:w-96 lg:p-2 bg-slate-400" src="gm.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex lg:mt-9 justify-center">
+            <a class="btn text-black font-bold border-0 hover:text-white bg-white lg:my-6 rounded-none sm:my-3" href="https://github.com/ZaidanNur" target="_blank">Check My GitHub For More</a>
+        </div>
+
+    </div>
+
+    <div class="p-96">
+        <p>wkwkwk</p>
+    </div>
+
+    <script>
+    </script>
+</body>
+
+</html>

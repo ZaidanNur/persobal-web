@@ -1,0 +1,46 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #FBFAFF;
+    scroll-behavior: smooth;
+}
+
+.navbar,
+.specialities-card,
+.card-project {
+    background-color: #FBFAFF;
+}
+
+.nav-logo {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 800;
+    font-size: 40px;
+}
+
+.menu :where(li:not(.menu-title):not(:empty))> :where(*:not(ul):focus),
+.menu :where(li:not(.menu-title):not(:empty))> :where(*:not(ul):hover) {
+    background-color: #FBFAFF!important;
+    font-weight: 600!important;
+    transition: ease-in-out;
+    /* --tw-bg-opacity: 0.1; */
+}
+
+.menu :where(li:not(.menu-title):not(:empty))> :where(:not(ul).active),
+.menu :where(li:not(.menu-title):not(:empty))> :where(*:not(ul):active) {
+    --tw-bg-opacity: 1;
+    background-color: #FBFAFF!important;
+    --tw-text-opacity: 1;
+    color: #000!important;
+    font-weight: 600;
+    border-bottom: 2px solid #000;
+    border-radius: 0!important;
+}
+
+#specialities {
+    background-color: #fff;
+    z-index: -1!important;
+}
+
+#projects {
+    background-color: #5E3BEF!important;
+}
