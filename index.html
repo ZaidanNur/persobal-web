@@ -25,6 +25,8 @@
                 atElement = 'specialities'
             } else if(document.querySelector('#projects').getBoundingClientRect().top > 0){
                 atElement = 'projects'
+            } else if(document.querySelector('#certifications').getBoundingClientRect().top > 0){
+                atElement = 'certifications'
             };
             console.log(document.querySelector('#hello').getBoundingClientRect().top);
             console.log(atElement);
@@ -39,7 +41,7 @@
                 <li><a :class="{ 'active' : atElement==='hello' }" x-on:click="window.scrollTo({top: 0, behavior: 'smooth'});window.pageXOffset">Hello!</a></li>
                 <li><a :class="{ 'active' : atElement==='specialities' }" x-on:click="document.getElementById('specialities').scrollIntoView({ behavior: 'smooth' })">Specialities</a></li>
                 <li><a :class="{ 'active' : atElement==='projects' }" x-on:click="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })">Projects</a></li>
-                <li><a>Certification</a></li>
+                <li><a :class="{ 'active' : atElement==='certifications' }" x-on:click="document.getElementById('certifications').scrollIntoView({ behavior: 'smooth' })">Certification</a></li>
                 <li><a>Contact</a></li>
             </ul>
             <div class="dropdown dropdown-end">
@@ -180,6 +182,31 @@
 
         <div class="flex mt-5 lg:mt-9 justify-center">
             <a class="btn text-black font-bold border-0 hover:text-white bg-white lg:my-6 rounded-none sm:my-3" href="https://github.com/ZaidanNur" target="_blank">Check My GitHub For More</a>
+        </div>
+
+    </div>
+
+    <!-- Certifications -->
+    <div class="px-20 py-16 lg:px-36 lg:py-24" id="certifications">
+        <div class="mb-16 font-semibold text-5xl text-center lg:mb-24">
+            Certification
+        </div>
+        <div class="grid gap-y-10 lg:grid-cols-2 lg:gap-12">
+            <div>
+                <img class="" src="921daed705d8dda1352350841f4d4be7course_certificate_e1b5e1a0qxxst6.png" alt="">
+            </div>
+            <div>
+
+                <img class="" src="sertifikat_course_382_1498740_200523064238-1.png" alt="">
+            </div>
+            <div>
+
+                <img class="" src="sertifikat_course_159_1498740_140821090605-1.png" alt="">
+            </div>
+            <div>
+
+                <img class="" src="sertifikat_course_191_1498740_230721214453-1.png" alt="">
+            </div>
         </div>
 
     </div>
